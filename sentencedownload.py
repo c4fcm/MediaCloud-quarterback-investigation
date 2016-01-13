@@ -14,11 +14,13 @@ logging.basicConfig(level=logging.DEBUG)
 
 t = open('qb-table.csv')
 qb_table = csv.reader(t)
+qb_table.next()
 
 m = open('sources.csv') ###should I include sources that haven't gleaned sentences in the past year?
 media_reader = csv.reader(m)
-media = [x[1] for x in media_reader]	[1:]
-
+media = [x[1] for x in media_reader][1:]
+media_id_str = " ".join(media)
+logging.info("Searching in %d media (%s)" % (len(media),media_id_str))
 stopwords = stopwords.getStopWords()
 
 ############################################
@@ -29,15 +31,16 @@ def wordsearch(team,qb): #MC query, returns list of words
 	qb_split = qb.split()
 	exclude = list(string.punctuation)+qb_split+team.split()+byteify(stopwords)+['1','2','3','4','5','6','7','8','9','0']
 	exclude = [x.lower() for x in exclude]
-	for source in media:
-		sentences = mc.sentenceList(solr_query=str('"'+qb+'"'), solr_filter=[mc.publish_date_query(datetime.date(2014,9,4), datetime.date(2015,2,1)), '+media_id:'+str(source)], rows = 10000)
-		logging.info('    found %d sentences',len(sentences))
-		response = sentences['response']
-		docs = response['docs']
-		for doc in docs:  
-			some_words = byteify(wordpunct_tokenize(doc['sentence']))
-			some_words = [x.lower() for x in some_words]
-			words += [x for x in some_words if x not in exclude]
+	sentences = mc.sentenceList(solr_query=str('"'+qb+'"'), 
+		solr_filter=[mc.publish_date_query(datetime.date(2015,9,9), datetime.date(2016,1,4)), 
+					 '+media_id:('+media_id_str+')'], rows = 10000)
+	logging.info('    found %d sentences',len(sentences['response']['docs']))
+	response = sentences['response']
+	docs = response['docs']
+	for doc in docs:  
+		some_words = byteify(wordpunct_tokenize(doc['sentence']))
+		some_words = [x.lower() for x in some_words]
+		words += [x for x in some_words if x not in exclude]
 	logging.info('  done')
 	return words
 
@@ -45,9 +48,7 @@ def sortnsave(): #assembles corpus, dumps qb words in buckets based on race, cal
 	corpus = {}
 	count_corpus = {}
 	white_doc = []
-	black_doc = []
 	other_doc = []
-	hispanic_doc = []
 	logging.info('Fetching sentences...')
 	for row in qb_table:
 		team = row[0]
@@ -64,37 +65,21 @@ def sortnsave(): #assembles corpus, dumps qb words in buckets based on race, cal
 		csv_save('counts/player',file_label,counted_doc)
 		if race == 'white':
 			white_doc += qb_words
-		elif race == 'black':
-			black_doc += qb_words
-		elif race == 'other':
-			other_doc += qb_words
-		elif race == 'hispanic':
-			hispanic_doc += qb_words
 		else:
-			print "Race sorting error!", team, qb, race
+			other_doc += qb_words
 	logging.info('done fetching sentences')
 	json_save('words','###CORPUS###',corpus)
 	json_save('counts','###CORPUS###',count_corpus)
 	json_save('words/race','white_words',white_doc)
-	json_save('words/race','black_words',black_doc)
 	json_save('words/race','other_words',other_doc)
-	json_save('words/race','hispanic_words',hispanic_doc)
 	csv_save('words/race','white_words',white_doc)
-	csv_save('words/race','black_words',black_doc)
 	csv_save('words/race','other_words',other_doc)
-	csv_save('words/race','hispanic_words',hispanic_doc) 
 	white_counts = dict((x,white_doc.count(x)) for x in set(white_doc)) 
 	json_save('counts/race','white_counts',white_counts)
 	csv_save('counts/race','white_counts',white_counts)
-	black_counts = dict((x,black_doc.count(x)) for x in set(black_doc)) 
-	json_save('counts/race','black_counts',black_counts)
-	csv_save('counts/race','black_counts',black_counts)
 	other_counts = dict((x,other_doc.count(x)) for x in set(other_doc)) 
 	json_save('counts/race','other_counts',other_counts)
 	csv_save('counts/race','other_counts',other_counts)
-	hispanic_counts = dict((x,hispanic_doc.count(x)) for x in set(hispanic_doc)) 
-	json_save('counts/race','hispanic_counts',hispanic_counts)
-	csv_save('counts/race','hispanic_counts',hispanic_counts)
 
 def byteify(input):
 	if isinstance(input, dict):
