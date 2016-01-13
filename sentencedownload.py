@@ -1,9 +1,8 @@
-import datetime, json, csv, sys, math, string, operator, nltk, stopwords, mediacloud, unicodecsv, logging, os
-from cStringIO import StringIO ###
-from nltk.tokenize import wordpunct_tokenize
-from collections import Counter
+import datetime, json, string, logging, os
+import unicodecsv as csv
+import textmining, mediacloud, stopwords
 
-###CONFIG###
+# Load config data
 from ConfigParser import SafeConfigParser
 parser = SafeConfigParser()
 parser.read('config.txt')
@@ -16,110 +15,87 @@ t = open('qb-table.csv')
 qb_table = csv.reader(t)
 qb_table.next()
 
-m = open('sources.csv') ###should I include sources that haven't gleaned sentences in the past year?
+m = open('sources.csv')
 media_reader = csv.reader(m)
 media = [x[1] for x in media_reader][1:]
 media_id_str = " ".join(media)
 logging.info("Searching in %d media (%s)" % (len(media),media_id_str))
 stopwords = stopwords.getStopWords()
 
-############################################
-	
-def wordsearch(team,qb): #MC query, returns list of words 
-	logging.info('  querying for %s (%s)...' % (qb,team))
-	words = []
-	qb_split = qb.split()
-	exclude = list(string.punctuation)+qb_split+team.split()+byteify(stopwords)+['1','2','3','4','5','6','7','8','9','0']
-	exclude = [x.lower() for x in exclude]
-	sentences = mc.sentenceList(solr_query=str('"'+qb+'"'), 
-		solr_filter=[mc.publish_date_query(datetime.date(2015,9,9), datetime.date(2016,1,4)), 
-					 '+media_id:('+media_id_str+')'], rows = 10000)
-	logging.info('    found %d sentences',len(sentences['response']['docs']))
-	response = sentences['response']
-	docs = response['docs']
-	for doc in docs:  
-		some_words = byteify(wordpunct_tokenize(doc['sentence']))
-		some_words = [x.lower() for x in some_words]
-		words += [x for x in some_words if x not in exclude]
-	logging.info('  done')
-	return words
+def fetch_corpus_from_mc(team,qb): #MC query, returns list of words 
+    '''
+    Query MC for coverage of the QB specified, return a large string corpus
+    '''
+    logging.info('  querying for %s (%s)...' % (qb,team))
+    words = []
+    qb_split = qb.split()
+    exclude = list(string.punctuation)+qb_split+team.split()+byteify(stopwords)+['1','2','3','4','5','6','7','8','9','0']
+    exclude = [x.lower() for x in exclude]
+    sentences = mc.sentenceList(solr_query=str('"'+qb+'"'), 
+        solr_filter=[mc.publish_date_query(datetime.date(2015,9,9), datetime.date(2016,1,4)), 
+                     '+media_id:('+media_id_str+')'], rows = 10000)
+    logging.info('    found %d sentences',len(sentences['response']['docs']))
+    response = sentences['response']
+    docs = response['docs']
+    logging.info('  done')
+    return " ".join([d['sentence'] for d in docs])
 
-def sortnsave(): #assembles corpus, dumps qb words in buckets based on race, calls wordcount_save, tfidf_save for each bucket
-	corpus = {}
-	count_corpus = {}
-	white_doc = []
-	other_doc = []
-	logging.info('Fetching sentences...')
-	for row in qb_table:
-		team = row[0]
-		qb = row[1]
-		race = row[2]
-		file_label = str(qb+' ('+team+')')
-		qb_words = wordsearch(team,qb)
-		json_save('words/player/',file_label,qb_words)
-		csv_save('words/player',file_label,qb_words)
-		corpus[qb] = qb_words
-		counted_doc = dict((x,qb_words.count(x)) for x in set(qb_words)) 
-		count_corpus[qb] = counted_doc
-		json_save('counts/player/',file_label,counted_doc)
-		csv_save('counts/player',file_label,counted_doc)
-		if race == 'white':
-			white_doc += qb_words
-		else:
-			other_doc += qb_words
-	logging.info('done fetching sentences')
-	json_save('words','###CORPUS###',corpus)
-	json_save('counts','###CORPUS###',count_corpus)
-	json_save('words/race','white_words',white_doc)
-	json_save('words/race','other_words',other_doc)
-	csv_save('words/race','white_words',white_doc)
-	csv_save('words/race','other_words',other_doc)
-	white_counts = dict((x,white_doc.count(x)) for x in set(white_doc)) 
-	json_save('counts/race','white_counts',white_counts)
-	csv_save('counts/race','white_counts',white_counts)
-	other_counts = dict((x,other_doc.count(x)) for x in set(other_doc)) 
-	json_save('counts/race','other_counts',other_counts)
-	csv_save('counts/race','other_counts',other_counts)
+def get_and_write_data():
+    '''
+    Call this to collect and output the data
+    '''
+    corpus = {}
+    count_corpus = {}
+    white_doc = ""
+    other_doc = ""
+    logging.info('Fetching sentences...')
+    tdm_names = []
+    tdm = textmining.TermDocumentMatrix()
+    race_tdm_names = []
+    race_tdm = textmining.TermDocumentMatrix()
+    for row in qb_table:
+        team = row[0]
+        qb = row[1]
+        race = row[2]
+        file_label = str(qb+' ('+team+')')
+        qb_corpus = fetch_corpus_from_mc(team,qb) 
+        tdm.add_doc(qb_corpus)
+        tdm_names.append(qb)
+        if race == 'white':
+            white_doc += qb_corpus + " "
+        else:
+            other_doc += qb_corpus + " "
+    # write the results
+    write_csv(tdm_names, tdm.rows(cutoff=1), 'word_freq_by_quarterback.csv')
+    race_tdm.add_doc(white_doc)
+    race_tdm.add_doc(other_doc)
+    write_csv(['white','other'], race_tdm.rows(cutoff=1), 'word_freq_by_race.csv')
+
+def write_csv(cols, doc_iterator, filename):
+    '''
+    Write the results of a TDM to a CSV in a human-usable format
+    '''
+    words = doc_iterator.next()
+    counts = [ row for row in doc_iterator ]
+    output_csv = csv.writer( open( os.path.join('data',filename), 'wb') )
+    output_csv.writerow(['word']+cols+[c+" pct" for c in cols])
+    for idx in range(0,len(words)):
+        word_counts = [ r[idx] for r in counts ]
+        normalized_word_counts = [ float(r[idx])/float(len(words)) for r in counts ]
+        output_csv.writerow([words[idx]]+word_counts+normalized_word_counts)
 
 def byteify(input):
-	if isinstance(input, dict):
-		return {byteify(key):byteify(value) for key,value in input.iteritems()}
-	elif isinstance(input, list):
-		return [byteify(element) for element in input]
-	elif isinstance(input, unicode):
-		return input.encode('utf-8')
-	else:
-		return input
-		
-def json_save(file, label, content):
-	directory = os.path.join('data','json',file)
-	if not os.path.exists(directory):
-		os.makedirs(directory)
-	with open( os.path.join(directory,label+'.txt'), "w") as outfile:
-		json.dump(content,outfile)
-		
-def csv_save(file,label,content):
-	directory = os.path.join('data','csv',file)
-	if not os.path.exists(directory):
-		os.makedirs(directory)
-
-	with open( os.path.join(directory,label+'.csv'), 'wb') as myfile:
-		if isinstance(content,dict):
-			try:
-				w = unicodecsv.writer(myfile)
-				w.writerow( ('WORD', str(file).upper()) )
-				for i in content:
-					w.writerow( (i, content[i]) )
-			finally:
-				myfile.close()
-		elif isinstance(content,list):
-			try:
-				w = unicodecsv.writer(myfile)
-				w.writerow( (['WORDS']) )
-				for i in content:
-					w.writerow([i])
-			finally:
-				myfile.close()
-		
+    '''
+    Generic string helper function
+    '''
+    if isinstance(input, dict):
+        return {byteify(key):byteify(value) for key,value in input.iteritems()}
+    elif isinstance(input, list):
+        return [byteify(element) for element in input]
+    elif isinstance(input, unicode):
+        return input.encode('utf-8')
+    else:
+        return input
+        
 if __name__ == "__main__":
-	sortnsave()
+    get_and_write_data()

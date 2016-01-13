@@ -1,19 +1,479 @@
 name, media_id
-nfl.com,68146
-sports.yahoo.com,19814
-foxsports.com,123604
-www.foxsports.com,55476
-pro-football-reference.com,89358
-USATODAY.com NFL - Top Stories,4490
-cbssportsnetwork.com,169548
-cbssports.com,25848
-NFL Football News : CBSSports.com,4487
-ESPN.com,4451
-profootballtalk.nbcsports.com,25357
-espn.go.com,24656
-sports.espn.go.com,24927
-matchups.nbcsports.msnbc.com,25782
-scores.nbcsports.msnbd.com,26059
-offthebench.nbcsports.com,26159
-nbcsports.msnbc.com,24745
-www.nfl.com/#spider,68146
+"nfl.com",68146
+"sports.yahoo.com",19814
+"foxsports.com",123604
+"www.foxsports.com",55476
+"pro-football-reference.com",89358
+"USATODAY.com NFL - Top Stories",4490
+"cbssportsnetwork.com",169548
+"cbssports.com",25848
+"NFL Football News : CBSSports.com",4487
+"ESPN.com",4451
+"profootballtalk.nbcsports.com",25357
+"espn.go.com",24656
+"sports.espn.go.com",24927
+"matchups.nbcsports.msnbc.com",25782
+"scores.nbcsports.msnbd.com",26059
+"offthebench.nbcsports.com",26159
+"nbcsports.msnbc.com",24745
+"www.nfl.com/#spider",68146
+"New York Times",1
+"Washington Post",2
+"USA Today",4
+"LA Times",6
+"The New York Post",7
+"The Daily News New York",8
+"San Francisco Chronicle",14
+"The Boston Globe",15
+"The Huffington Post",314
+"Reuters",1089
+"FOX News",1092
+"BBC",1094
+"CNN",1095
+"Newsweek ",1098
+"Forbes",1104
+"MSNBC",1149
+"Wall Street Journal",1150
+"Daily Mail",1747
+"Daily Telegraph",1750
+"Guardian",1751
+"CBS News",1752
+"CNET",4415
+"Examiner.com",4418
+"TIME.com",4419
+"The Oregonian",23
+"The Miami Herald",28
+"South Florida Sun-Sentinel",39
+"Tulsa World ",88
+"Bates Line",705
+"Brewed Fresh Daily",725
+"WEEK-TV NBC",1108
+"Star Community Newspapers",1152
+"The Star Group",1153
+"The Alvardo Star",1155
+"Azle News",1156
+"Dallas Business Journal",1157
+"Today Newspapers Online",1158
+"Commerce Journal",1160
+"Commercial Recorder",1161
+"Daily Commercial Record",1163
+"Denton Record-Chronicle",1164
+"Ellis County Chronicle",1165
+"Ellis County Press",1166
+"Farmersville Times",1167
+"Focus Daily News",1168
+"Fort Worth Business Press  - Homepage",1169
+"Johnson City Record Courier",1173
+"Herald Banner",1174
+"Kaufman Herald",1176
+"Lake Cities Sun",1177
+"The Monitor",1179
+"Park Cities People",1183
+"Pilot Point Post-Signal",1184
+"Texas Lawyer",1189
+"Terrell Tribune",1190
+"Aubrey Town Charter",1191
+"Waxahachie Daily Light",1192
+"Weatherford Democrat",1193
+"Wise County Messenger",1194
+"Wylie News",1195
+"KDTN Daystar",1196
+"KDFW Fox 4",1197
+"KXAS NBC 5",1198
+"WFAA ABC",1199
+"KTVT CBS 11",1200
+"KERA PBS",1202
+"KTXA",1203
+"Azteca America",1205
+"KUVN Univision",1206
+"KDFI My Network TV",1207
+"KMPX",1208
+"KDAF The CW",1209
+"KXTX Telemundo",1211
+"TeleFutura",1212
+"KATA Multimedios TV",1213
+"KFWD",1214
+"ION Television",1215
+"KERA FM",1216
+"KFXR",1217
+"KESN",1218
+"KHFX",1219
+"KLIF",1220
+"KLUV",1222
+"KSKY",1223
+"KVCE",1224
+"KRLD",1225
+"KTCK",1226
+"WBAP",1227
+"Dallas Morning News NeighborsGo Blog",1228
+"The Agency Blog",1229
+"BarkingDogs.org | Taking back our neighborhood!",1230
+"A Capital Idea",1232
+"Cowtown Chronicles  ",1233
+"Dallas Blog",1235
+"Dallas Uptown Guide",1236
+" Fort Worthology",1238
+"Garry's Blog",1239
+"Dallas Metblogs",1240
+"Pegasus News",1242
+"PhotoJournalism",1243
+"Round The Mound",1245
+"Unfair Park",1246
+"Call Newspapers",1247
+"Clayton News Daily",1248
+"Suburban Journals",1249
+"Jefferson City News-Tribune",1250
+"Missourian",1251
+"New Haven Leader",1252
+"The Odessan / Focus on Oak Grove",1253
+"The St. Louis American",1254
+"St. Louis Business Journal",1255
+"St. Louis Daily Record",1256
+"Saint Louis Front Page",1257
+"Missouri Lawyers Weekly",1258
+"St. Louis Riverfront Times",1259
+"Sullivan Independent News",1263
+"Webster-Kirkwood Times",1264
+"South County Times",1265
+"Lincoln County Journal",1266
+"Troy Free Press Online",1268
+"KTVI FOX",1269
+"KMOV CBS",1270
+"KSDK NBC",1271
+"KETC PBS",1272
+"KPLR The CW",1273
+"KNLC",1274
+"WRBU My Network TV",1276
+"KDHX",1278
+"KEZK-FM",1279
+"KMOX",1280
+"KSLG",1281
+"KTRS",1282
+"KWMU",1283
+"KFTK",1284
+"Talk Radio 1190",1286
+"AEC St. Louis  ",1287
+"Arch City Chronicle",1288
+"Blog Saint Louis",1289
+"The Commonspace Blog",1290
+"Confluence",1291
+"Kitchen Parade",1292
+"LO-FI SAINT LOUIS  ",1293
+"MayorSlay.com",1294
+"Megan and Murray",1295
+"The Overland Examiner",1296
+"St. Louis Schools Blog",1297
+"DiatribeR ",1298
+"STLmedia.net",1299
+"StlRecruiting",1300
+"STL Syndicate",1301
+"Urban Review STL  ",1302
+"A Veggie Venture",1303
+"What's New in Old North",1304
+"All Around Cleveland",1306
+"Chagrin Valley Times",1307
+"Cleveland Jewish News",1309
+"Cleveland Stater",1310
+"Crain's Cleveland Business",1311
+"Euclid Sun Journal",1312
+"Maple Heights Press",1315
+"Solon Sun - cleveland.com",1316
+"The Observer",1317
+"WEWS ABC",1319
+"WJW Fox",1320
+"WKYC NBC",1321
+"WOIO CBS",1322
+"WUAB",1324
+"WCPN",1325
+"WTAM",1326
+"WHK",1327
+"CoolCleveland",1330
+"Cuyahoga County Planning Commission Weblog",1331
+"Meet the Bloggers",1333
+"REALNEO.US",1334
+"Biscayne Times Online",1337
+"Boca Raton News",1338
+"Daily Business Review",1339
+"Coral Gables Gazette",1340
+"Jupiter Courier",1341
+"Miami New Times",1342
+"Miami Today News",1343
+"Palm Beach Daily News",1344
+"South Dade News Leader",1345
+"Miami's Community Newspapers",1346
+"South Florida Business Journal",1347
+"WPBT PBS",1348
+"WFOR CBS 4",1349
+"WTVJ NBC 6",1350
+"WSVN FOX",1351
+"WPLG ABC",1352
+" WLRN PBS",1353
+"WSBS",1354
+"WBFS My Network TV",1355
+"WSFL-TV The CW",1356
+"WHDT | MIG Broadcast Group",1357
+"WSCV Telemundo",1358
+"WPTV NBC",1359
+"WPEC CBS",1360
+"WPBF ABC",1361
+"WFLX FOX",1362
+"WTVX The CW",1363
+"WXEL PBS",1364
+"WTCN-CA",1365
+"WQAM",1366
+"WIOD",1367
+"WFTL",1368
+"WINZ",1369
+"WAXY",1370
+"WKAT",1371
+"Infomaniac: Behind the News",1372
+"Coral Gables",1373
+"Critical Miami",1374
+"The Daily Pulp: Bob Norman's Blog",1376
+"Dave Barry's Blog",1377
+"hidden city",1378
+"Miami Metblogs",1379
+"Miami Beach 411",1380
+"Miami Beach Blog ",1382
+"Miamist",1383
+"Miamista",1384
+"Overtown USA",1385
+"sex and the beach",1386
+"South Florida",1387
+" William M. Hartnett",1389
+"33154 Buzz",1390
+"The Beaverton Valley Times",1391
+"Canby Herald",1392
+"Daily Journal of Commerce",1393
+"Estacada News",1394
+"Hillsboro Argus",1395
+"Lake Oswego Review",1396
+"Forest Grove News-Times",1397
+"Portland Mercury",1398
+"The Sandy Post",1399
+"The Times",1400
+"West Linn Tidings",1401
+"Willamette Week",1402
+"Wilsonville Spokesman",1403
+"KATU ABC",1404
+"KOIN CBS",1406
+"KGW NBC",1407
+"KOPB",1409
+"KPTV FOX 12",1410
+"KUNP-LP Univision ",1411
+"KPDX My Network TV ",1412
+"KPOJ",1413
+"KXL",1414
+"KCMD",1415
+"KFXX",1416
+"KEX",1417
+"KBNP ",1418
+"Altportland.com",1419
+"Blogtown, PDX",1420
+"BootsnAll Travel Network",1421
+"CommissionerSam.com",1422
+"East PDX News",1423
+"Future of Real Estate Marketing - Real Estate 2.0",1424
+"Heardinmycab",1425
+"Portland Metblogs",1426
+" Mid-county Memo Blog ",1427
+"The Multnomah Villager  ",1428
+"Newsdesigner.com",1429
+"Michael Durham Photography",1430
+"Portland Communique",1431
+"Portland Ground",1432
+"Portland Kid Stuff",1433
+"PortlandPics Photography",1434
+" Portland Public Art",1435
+"The Portland Alliance",1436
+"The Oregonian's Public Editor",1437
+"Tech Drool",1438
+"Bartlesville Examiner-Enterprise",1439
+"Neighbor Newspapers",1441
+"Claremore Daily Progress",1442
+"Pawhuska Journal Capital",1447
+"Sapulpa Herald Online",1448
+"KJRH NBC",1451
+"KOTV CBS",1452
+"Tulsa Beacon",1455
+"http://www.clevelandamerican.com",1457
+"Oologah Lake Leader Online",1460
+"The Bigheart Times",1461
+"KBIX/KYAL",1467
+"KRMG",1468
+"KFAQ",1469
+"KAKC",1470
+"The Diag - MLive.com",1471
+" YpsiNews.com",1472
+"Jim Carty's Analysis and Opinion ",1473
+"ypsi~dixit",1474
+"Arbor Update",1475
+"Ann Arbor News",1476
+"Overheard in Ann Arbor",1477
+"Ann Arbor After Dark",1478
+"Ann Arbor News Extra",1479
+"Vacuum - Edward Vielmetti in Ann Arbor, Michigan 48104",1480
+"Ann Arbor is Overrated",1481
+"Carfree Ann Arbor",1482
+"The Chelsea Blog",1483
+"WAAM",1484
+"Chelsea Standard",1486
+"WUOM",1487
+"WTKA",1489
+"MLive.com",1490
+"The Michigan Daily",1492
+"Dexter Leader",1493
+"WLOS ABC",1496
+"Smoky Mountain News",1497
+"Asheville Citizen-Times",1498
+"Times-News",1499
+"WISE",1500
+"Mountain Rebel",1501
+"BlogAsheville",1502
+"La Voz Independiente",1503
+"Black Mountain News",1504
+"WUNF PBS",1505
+"WCQS",1506
+"Asheville, NC 2008 | Visitor Center | Relocation Information Guide | Local Classifieds",1507
+"The Mountaineer",1508
+"WHNS FOX",1509
+"WWNC",1510
+"Mountain Xpress",1511
+"STNG",1512
+"Central Illinois Proud",1513
+"WCBU-FM",1514
+"Peoria Journal Star",1515
+"WAOE My Network TV",1516
+"WTVP PBS",1517
+"WHOI-TV ABC",1518
+"WMBD",1519
+" The Peoria Chronicle",1520
+"WZPN-FM",1521
+"WTVR-TV CBS",1522
+"WXGI",1523
+"Style Weekly",1524
+"RiverCityRapids",1525
+"RVABlogs ",1526
+"WRLH FOX",1527
+"Virginia Lawyers Weekly",1528
+"WCVE Public Radio",1529
+"The Community Weekly",1530
+"Race to Richmond",1531
+"WRNL",1532
+"Blog Net News",1534
+"Richmond & Hampton Roads Voice Newspapers",1535
+"Church Hill People's News",1536
+"Fifty Plus",1537
+"WRIC-TV ABC",1538
+"WRVA",1539
+"Chesterfield Observer",1540
+"Soul of Virginia",1541
+"Henrico Citizen Online",1542
+"WWBT NBC/WB",1543
+"Save Richmond",1544
+"West of the Boulevard News",1545
+"Richmond Blog Squad",1546
+"Richmond Times-Dispatch",1547
+"KOKI FOX",1549
+"Living On Tulsa Time",1551
+"KQCW The CW",1552
+"Downtown Tulsa",1553
+"Tulsa Police Blog",1554
+"Tulsa Topics",1555
+"KOED PBS",1556
+"Oklahoma Wine News",1557
+"KTUL ABC",1558
+"KMYT My Network TV ",1560
+"Paddletales - Oklahoma Road Trips Blog",1561
+"Tulsa TV Memories",1562
+"WEVD-LP ABC",1567
+"WCAV",1568
+"The Hook News Blog  ",1569
+"cVillain ",1570
+"Smart Communities",1571
+"WDAY",1572
+"Enderlin Independent: North Dakota",1573
+"KZAZ",1574
+"The Northern Light",1575
+"Cass County Reporter",1576
+"Fargoing",1577
+"KVOS",1578
+"C-VILLE",1579
+"The Hook",1580
+"KVOX",1581
+"KPUG",1582
+"KFME PBS",1583
+"Whatcom Watch",1584
+"WBOC-TV",1585
+"KXJB CBS",1586
+"KMAV",1587
+"Ferndale Record-Journal",1588
+"The Bellingham Herald",1589
+"Dover, Delaware State News",1590
+"The Insider",1591
+"Lynden Tribune",1592
+"MegaAwesome ",1593
+"Cascadia Weekly",1594
+"KFGO",1595
+"Fargo Metro News",1596
+"KQWB",1597
+"Fargo Forum",1598
+"Dover Post",1599
+"Fargophilia",1601
+"Cavalier Daily",1602
+"The Spectrum",1603
+"The Bellingham Real Estate Blog",1604
+"AS Review",1605
+"The Bellingham Business Journal",1606
+"WVIR NBC",1607
+"Charlottesville Daily Progress",1608
+"WINA",1609
+"WDOV",1610
+"http://cp2.abhost.net/suspended.page/",1611
+"KGMI",1612
+"The Western Front",1613
+"High Plains Reader",1614
+"WXCO",1615
+"WSAU",1616
+"Central Wisconsin News",1617
+"WFXS FOX",1618
+"Marshfield News-Herald",1619
+"WAOW ABC",1620
+"WHRM PBS",1621
+"Wausau City Pages",1622
+"Wausau Daily Herald",1623
+"WSAW CBS",1624
+"Wausaublog.Org",1625
+"WKNR and WWGK",1629
+"The new Sun News, Cleveland, Ohio, Home Page",1630
+"Cleveland Scene",1632
+"Daily Legal News",1636
+"West Life",1637
+"cleveland.com",1641
+"WERE",1644
+"WVIZ PBS",1647
+"Centraldentonpreservation.org",1652
+"Dallas Air America",1659
+"Danm.us",1661
+"Entertainment Law",1666
+"Plano Blog",1676
+"The Community News",1686
+"Cleburne Times-Review",1688
+"Fort Worth Weekly",1692
+"Fort Worth Star-Telegram",1694
+"Denied:1up! Software ()",1695
+"Huntsville Item",1696
+"Mansfield News-Mirror",1697
+"Murphy Monitor",1699
+"NW Tarrant Co. Times-Record",1700
+"PRINCETON HERALD",1701
+"Park Cities News",1702
+"Sachse News",1703
+"Texas Jewish Post",1704
+"Rockwall County News",1705
+"Manchester Enterprise",1714
+"Milan News-Leader",1715
+"Saline Reporter",1716
+"WCVE PBS",1717
+"WCVW PBS",1718
+"WHTJ PBS",1719
