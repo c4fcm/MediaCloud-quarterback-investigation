@@ -2,4 +2,4 @@ data/*.csv
 config.txt
 venv
 *.pyc
-
+data/corpora
