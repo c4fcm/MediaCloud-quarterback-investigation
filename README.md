@@ -1,52 +1,59 @@
-# README
+Investigating Media Quarterback Coverage
+========================================
 
-This is the code for MediaCloud's quarterback study, created by [Val Healy]( https://github.com/val1ant ).
+This code gets word counts for media coverage of NFL quarterbacks.  It downloads 
+sentences from [MediaCloud](https://mediacloud.org) and does simple stopwording and 
+word counting.  The resulting data is stored in the `data` folder so you can do analysis 
+on it.
 
-## INSTALLATION
 
-To install, save this repository to your computer.
-Copy the `config.txt.template` to `config.txt` and then paste in your API key where indicated. Don't have a MediaCloud API key? Register to get yours [here]( https://core.mediacloud.org/login/register ) and see your API key [here]( https://core.mediacloud.org/admin/profile ).
-Then, install the dependencies listed below.
+Installing
+----------
 
-### DEPENDENCIES
+ * This code uses Python 2.7.
+ * Register to get a [MediaCloud API Key]( https://core.mediacloud.org/login/register ). You will be able to see the key on [your profile page]( https://core.mediacloud.org/admin/profile ) once you are registered.
+ * Copy the `config.txt.template` to `config.txt` and then paste in your API key where indicated. 
+ * Install the dependencies via pip: `pip install -r requirements.pip`
 
-This program has several dependencies. You will need to have the [MediaCloud API client]( https://github.com/c4fcm/MediaCloud-API-Client ), the [Natural Language Toolkit]( http://www.nltk.org/ ), and [unicodecsv]( https://pypi.python.org/pypi/unicodecsv ) in order to run these scripts. [scipy]( http://www.scipy.org/ ) is optional.
+Fetching Media Coverage Data
+----------------------------
 
-```shell
-pip install -r requirements.pip
-```
+Once you have set it all up, just run `sentencedownload.py` to get all the sentences and build wordcounts.  This doesn't use the MediaCloud word counting because we do not want to sample the data; we want the true full word counts to support this analysis.
 
-### HOW TO RUN
+Analyzing Data
+--------------
 
-#### sentencedownload
-Open up your virtual environment in terminal and run sentencedownload.py.
+We're using [Jupyter Notebooks](http://jupyter.org) for analysis. Open up the `qb-analysis.ipynb` to start exploring.
 
-#### tfidf
-The tfidf script calculates and saves tfidf values from the files downloaded in executing the sentencedownload script. 
-Therefore, *you must run sentencedownload prior to running tfidf*. 
-Open up your virtual environment in terminal and run tfidf.py.
+Methodology
+-----------
 
-### METHODOLOGY
+### Determining Race
 
-#### Quarterbacks
-To acquire the information (name and team) for each quarterback, I used the Wikipedia [list of starting quarterbacks]( https://en.wikipedia.org/wiki/List_of_NFL_starting_quarterbacks ).
-For each team in the table, I found the list of each team's 2014 starting quarterbacks by clicking **(list)** next to each team in the table. 
+We [scraped Wikipedia and nfl.com](https://github.com/c4fcm/nfl-quarterback-scraper) to generate a list of regular season starting quarterbacks.  Then we added a column for "race" (see `qb-table.csv`).  Race determination is a thorny and difficult task. Ideally, we would categorize using each player's self-identified race. However, we were unable to find evidence of self-identification for any of the players.  For this project, we elected to use the categorizations found in [Best Ticket's unofficial 2014 NFL Player Census]( http://www.besttickets.com/blog/nfl-player-census-2014/ ).  To support testing our hypotheses we group players as either "white" or "other" (ie. non-white).
 
-#### Race Determination
-Race determination is a tricky and difficult task. Ideally, I would categorize using each player's self-identified race.
-However, I was unable to find evidence of self-identification for any of the players.
-Thus, for this project, I elected to use the categorizations found in [Best Ticket's unofficial 2014 NFL Player Census]( http://www.besttickets.com/blog/nfl-player-census-2014/ ).
-Their methodology is as follows:
-```
-Though not quite as diverse as leagues like the NBA or the MLB, the NFL is composed of a wide variety of players. Using the eye test, and clues like last name and birthplace, we classified each NFL player. Our racial classifications are as follows:
--Black
--White
--Hispanic
--Other
--Asian/Pacific Islander
-The “Other” category consists of players of mixed racial composition and players whose racial categories only consisted of one or two instances. 
-```
-I used this same methodology to categorize the following players who were not found in the Best Ticket list above:
--Ryan Lindley (Arizona Cardinals)
--Connor Shaw (Cleveland Browns)
--Case Keenum (Houston Texans)
+### Sources
+
+We created a list of sources including (US Mainstream Media)[https://sources.mediameter.org/#media-tag/8875027/details], (US Regional Media)[https://sources.mediameter.org/#media-tag/2453107/details], and the top US sports websites (as identified by Alexa rankings).  These are listed with their MediaCloud ids in `sources.csv`.
+
+### English Stopwords
+
+Our initial list of english stopwords is listed in `stop-words-english4.txt`.  This list combines various other stopword lists into one larger one to remove more words we don't want for our analysis.
+
+### Domain-Specific Stop-Words
+
+We took the top 200 words for both "white" and "other" and coded them to identify domain-specific stopwords (ie. "pass", "twitter", etc.).  We coded into the following categories:
+ * health (injury, knee)
+ * football stop word (quarterback)
+ * name (Newton)
+ * descriptors (smart, fast) 
+ * action (passed, caught, run)
+ * personal (career, top, performance, other)
+
+The results are saved in `manual-word-tags.csv`.
+
+Contributors
+------------
+
+ * [Val Healy](https://github.com/val1ant)
+ * [Rahul Bhargava](https://github.com/rahulbot)
