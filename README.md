@@ -54,6 +54,7 @@ The results are saved in `manual-word-tags.csv`.
 
 Contributors
 ------------
-
- * [Val Healy](https://github.com/val1ant)
+ * [Allan Ko](https://github.com/allanko)
  * [Rahul Bhargava](https://github.com/rahulbot)
+ * [Val Healy](https://github.com/val1ant)
+ 
