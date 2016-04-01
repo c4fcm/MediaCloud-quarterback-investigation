@@ -1,58 +1,58 @@
-team,qb_name,race
-Arizona Cardinals,Carson Palmer,white
-Atlanta Falcons,Matt Ryan,white
-Baltimore Ravens,Joe Flacco,white
-Baltimore Ravens,Matt Schaub,white
-Baltimore Ravens,Jimmy Clausen,white
-Baltimore Ravens,Ryan Mallett,white
-Buffalo Bills,Tyrod Taylor,black
-Buffalo Bills,EJ Manuel,black
-Buffalo Bills,Matt Cassel,white
-Carolina Panthers,Cam Newton,black
-Chicago Bears,Jay Cutler,white
-Chicago Bears,Jimmy Clausen,white
-Cincinnati Bengals,Andy Dalton,white
-Cincinnati Bengals,AJ McCarron,white
-Cleveland Browns,Josh McCown,white
-Cleveland Browns,Johnny Manziel,white
-Cleveland Browns,Austin Davis,white
-Dallas Cowboys,Matt Cassel,black
-Dallas Cowboys,Tony Romo,hispanic
-Dallas Cowboys,Brandon Weeden,white
-Dallas Cowboys,Kellen Moore,white
-Denver Broncos,Peyton Manning,white
-Denver Broncos,Brock Osweiler,white
-Detroit Lions,Matthew Stafford,white
-Green Bay Packers,Aaron Rodgers,white
-Houston Texans,Brian Hoyer,white
-Houston Texans,Ryan Mallett,white
-Houston Texans,T.J. Yates,white
-Houston Texans,Brandon Weeden,white
-Indianapolis Colts,Matt Hasselbeck,white
-Indianapolis Colts,Andrew Luck,white
-Indianapolis Colts,Josh Freeman,black
-Jacksonville Jaguars,Blake Bortles,white
-Kansas City Chiefs,Alex Smith,white
-Miami Dolphins,Ryan Tannehill,white
-Minnesota Vikings,Teddy Bridgewater,black
-New England Patriots,Tom Brady,white
-New Orleans Saints,Drew Brees,white
-New Orleans Saints,Luke McCown,white
-New York Giants,Eli Manning,white
-New York Jets,Ryan Fitzpatrick,white
-Oakland Raiders,Derek Carr,white
-Philadelphia Eagles,Sam Bradford,white
-Philadelphia Eagles,Mark Sanchez,hispanic
-Pittsburgh Steelers,Ben Roethlisberger,white
-Pittsburgh Steelers,Michael Vick,black
-Pittsburgh Steelers,Landry Jones,white
-San Diego Chargers,Philip Rivers,white
-San Francisco 49ers,Colin Kaepernick,black
-San Francisco 49ers,Blaine Gabbert,white
-Seattle Seahawks,Russell Wilson,black
-St. Louis Rams,Nick Foles,white
-St. Louis Rams,Case Keenum,white
-Tampa Bay Buccaneers,Jameis Winston,black
-Tennessee Titans,Marcus Mariota,other
-Tennessee Titans,Zach Mettenberger,white
-Washington Redskins,Kirk Cousins,white
+team,qb_name,race,playtime (seconds)
+Arizona Cardinals,Carson Palmer,white,28840
+Atlanta Falcons,Matt Ryan,white,32277
+Baltimore Ravens,Joe Flacco,white,22677
+Baltimore Ravens,Matt Schaub,white,3824
+Baltimore Ravens,Jimmy Clausen,white,4380
+Baltimore Ravens,Ryan Mallett,white,4798
+Buffalo Bills,Tyrod Taylor,black,28288
+Buffalo Bills,EJ Manuel,black,5057
+Buffalo Bills,Matt Cassel,white,12300
+Carolina Panthers,Cam Newton,black,33788
+Chicago Bears,Jay Cutler,white,31779
+Chicago Bears,Jimmy Clausen,white,4380
+Cincinnati Bengals,Andy Dalton,white,26575
+Cincinnati Bengals,AJ McCarron,white,8519
+Cleveland Browns,Josh McCown,white,18178
+Cleveland Browns,Johnny Manziel,white,13274
+Cleveland Browns,Austin Davis,white,3520
+Dallas Cowboys,Matt Cassel,black,12300
+Dallas Cowboys,Tony Romo,hispanic,6729
+Dallas Cowboys,Brandon Weeden,white,3084
+Dallas Cowboys,Kellen Moore,white,5620
+Denver Broncos,Peyton Manning,white,19847
+Denver Broncos,Brock Osweiler,white,17375
+Detroit Lions,Matthew Stafford,white,33373
+Green Bay Packers,Aaron Rodgers,white,31423
+Houston Texans,Brian Hoyer,white,20694
+Houston Texans,Ryan Mallett,white,4798
+Houston Texans,T.J. Yates,white,2842
+Houston Texans,Brandon Weeden,white,3084
+Indianapolis Colts,Matt Hasselbeck,white,17041
+Indianapolis Colts,Andrew Luck,white,15172
+Indianapolis Colts,Josh Freeman,black,1831
+Jacksonville Jaguars,Blake Bortles,white,33221
+Kansas City Chiefs,Alex Smith,white,33815
+Miami Dolphins,Ryan Tannehill,white,32714
+Minnesota Vikings,Teddy Bridgewater,black,32224
+New England Patriots,Tom Brady,white,36309
+New Orleans Saints,Drew Brees,white,31139
+New Orleans Saints,Luke McCown,white,1800
+New York Giants,Eli Manning,white,34096
+New York Jets,Ryan Fitzpatrick,white,33913
+Oakland Raiders,Derek Carr,white,32831
+Philadelphia Eagles,Sam Bradford,white,28970
+Philadelphia Eagles,Mark Sanchez,hispanic,4571
+Pittsburgh Steelers,Ben Roethlisberger,white,24306
+Pittsburgh Steelers,Michael Vick,black,7454
+Pittsburgh Steelers,Landry Jones,white,2879
+San Diego Chargers,Philip Rivers,white,34581
+San Francisco 49ers,Colin Kaepernick,black,16339
+San Francisco 49ers,Blaine Gabbert,white,18487
+Seattle Seahawks,Russell Wilson,black,34995
+St. Louis Rams,Nick Foles,white,25681
+St. Louis Rams,Case Keenum,white,10601
+Tampa Bay Buccaneers,Jameis Winston,black,35258
+Tennessee Titans,Marcus Mariota,other,22886
+Tennessee Titans,Zach Mettenberger,white,9034
+Washington Redskins,Kirk Cousins,white,31441
