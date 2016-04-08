@@ -1,58 +1,58 @@
-team,qb_name,race,playtime (seconds)
-Arizona Cardinals,Carson Palmer,white,28840
-Atlanta Falcons,Matt Ryan,white,32277
-Baltimore Ravens,Joe Flacco,white,22677
-Baltimore Ravens,Matt Schaub,white,3824
-Baltimore Ravens,Jimmy Clausen,white,4380
-Baltimore Ravens,Ryan Mallett,white,4798
-Buffalo Bills,Tyrod Taylor,black,28288
-Buffalo Bills,EJ Manuel,black,5057
-Buffalo Bills,Matt Cassel,white,12300
-Carolina Panthers,Cam Newton,black,33788
-Chicago Bears,Jay Cutler,white,31779
-Chicago Bears,Jimmy Clausen,white,4380
-Cincinnati Bengals,Andy Dalton,white,26575
-Cincinnati Bengals,AJ McCarron,white,8519
-Cleveland Browns,Josh McCown,white,18178
-Cleveland Browns,Johnny Manziel,white,13274
-Cleveland Browns,Austin Davis,white,3520
-Dallas Cowboys,Matt Cassel,black,12300
-Dallas Cowboys,Tony Romo,hispanic,6729
-Dallas Cowboys,Brandon Weeden,white,3084
-Dallas Cowboys,Kellen Moore,white,5620
-Denver Broncos,Peyton Manning,white,19847
-Denver Broncos,Brock Osweiler,white,17375
-Detroit Lions,Matthew Stafford,white,33373
-Green Bay Packers,Aaron Rodgers,white,31423
-Houston Texans,Brian Hoyer,white,20694
-Houston Texans,Ryan Mallett,white,4798
-Houston Texans,T.J. Yates,white,2842
-Houston Texans,Brandon Weeden,white,3084
-Indianapolis Colts,Matt Hasselbeck,white,17041
-Indianapolis Colts,Andrew Luck,white,15172
-Indianapolis Colts,Josh Freeman,black,1831
-Jacksonville Jaguars,Blake Bortles,white,33221
-Kansas City Chiefs,Alex Smith,white,33815
-Miami Dolphins,Ryan Tannehill,white,32714
-Minnesota Vikings,Teddy Bridgewater,black,32224
-New England Patriots,Tom Brady,white,36309
-New Orleans Saints,Drew Brees,white,31139
-New Orleans Saints,Luke McCown,white,1800
-New York Giants,Eli Manning,white,34096
-New York Jets,Ryan Fitzpatrick,white,33913
-Oakland Raiders,Derek Carr,white,32831
-Philadelphia Eagles,Sam Bradford,white,28970
-Philadelphia Eagles,Mark Sanchez,hispanic,4571
-Pittsburgh Steelers,Ben Roethlisberger,white,24306
-Pittsburgh Steelers,Michael Vick,black,7454
-Pittsburgh Steelers,Landry Jones,white,2879
-San Diego Chargers,Philip Rivers,white,34581
-San Francisco 49ers,Colin Kaepernick,black,16339
-San Francisco 49ers,Blaine Gabbert,white,18487
-Seattle Seahawks,Russell Wilson,black,34995
-St. Louis Rams,Nick Foles,white,25681
-St. Louis Rams,Case Keenum,white,10601
-Tampa Bay Buccaneers,Jameis Winston,black,35258
-Tennessee Titans,Marcus Mariota,other,22886
-Tennessee Titans,Zach Mettenberger,white,9034
-Washington Redskins,Kirk Cousins,white,31441
+qb_name,team,race,playtime (seconds),numwords
+Carson Palmer,Arizona Cardinals,white,28840,26544
+Matt Ryan,Atlanta Falcons,white,32277,20918
+Joe Flacco,Baltimore Ravens,white,22677,13322
+Matt Schaub,Baltimore Ravens,white,3824,4813
+Jimmy Clausen,Baltimore Ravens,white,4380,4476
+Ryan Mallett,Baltimore Ravens,white,4798,9254
+Tyrod Taylor,Buffalo Bills,black,28288,23245
+EJ Manuel,Buffalo Bills,black,5057,3822
+Matt Cassel,Buffalo Bills,white,12300,20403
+Cam Newton,Carolina Panthers,black,33788,45100
+Jay Cutler,Chicago Bears,white,31779,19217
+Jimmy Clausen,Chicago Bears,white,4380,4476
+Andy Dalton,Cincinnati Bengals,white,26575,29923
+AJ McCarron,Cincinnati Bengals,white,8519,5457
+Josh McCown,Cleveland Browns,white,18178,32872
+Johnny Manziel,Cleveland Browns,white,13274,55756
+Austin Davis,Cleveland Browns,white,3520,8196
+Matt Cassel,Dallas Cowboys,black,12300,20403
+Tony Romo,Dallas Cowboys,hispanic,6729,52872
+Brandon Weeden,Dallas Cowboys,white,3084,19891
+Kellen Moore,Dallas Cowboys,white,5620,5805
+Peyton Manning,Denver Broncos,white,19847,66546
+Brock Osweiler,Denver Broncos,white,17375,16746
+Matthew Stafford,Detroit Lions,white,33373,26768
+Aaron Rodgers,Green Bay Packers,white,31423,58560
+Brian Hoyer,Houston Texans,white,20694,15978
+Ryan Mallett,Houston Texans,white,4798,9254
+T.J. Yates,Houston Texans,white,2842,4690
+Brandon Weeden,Houston Texans,white,3084,19891
+Matt Hasselbeck,Indianapolis Colts,white,17041,15154
+Andrew Luck,Indianapolis Colts,white,15172,41410
+Josh Freeman,Indianapolis Colts,black,1831,1865
+Blake Bortles,Jacksonville Jaguars,white,33221,18411
+Alex Smith,Kansas City Chiefs,white,33815,19060
+Ryan Tannehill,Miami Dolphins,white,32714,25013
+Teddy Bridgewater,Minnesota Vikings,black,32224,16832
+Tom Brady,New England Patriots,white,36309,87164
+Drew Brees,New Orleans Saints,white,31139,32725
+Luke McCown,New Orleans Saints,white,1800,2938
+Eli Manning,New York Giants,white,34096,32477
+Ryan Fitzpatrick,New York Jets,white,33913,26369
+Derek Carr,Oakland Raiders,white,32831,21925
+Sam Bradford,Philadelphia Eagles,white,28970,26590
+Mark Sanchez,Philadelphia Eagles,hispanic,4571,6017
+Ben Roethlisberger,Pittsburgh Steelers,white,24306,38546
+Michael Vick,Pittsburgh Steelers,black,7454,9457
+Landry Jones,Pittsburgh Steelers,white,2879,11236
+Philip Rivers,San Diego Chargers,white,34581,24382
+Colin Kaepernick,San Francisco 49ers,black,16339,22207
+Blaine Gabbert,San Francisco 49ers,white,18487,11868
+Russell Wilson,Seattle Seahawks,black,34995,36576
+Nick Foles,St. Louis Rams,white,25681,14149
+Case Keenum,St. Louis Rams,white,10601,7479
+Jameis Winston,Tampa Bay Buccaneers,black,35258,24365
+Marcus Mariota,Tennessee Titans,other,22886,42537
+Zach Mettenberger,Tennessee Titans,white,9034,3844
+Kirk Cousins,Washington Redskins,white,31441,30107
