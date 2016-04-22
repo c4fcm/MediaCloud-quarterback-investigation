@@ -34,7 +34,7 @@ We [scraped Wikipedia and nfl.com](https://github.com/c4fcm/nfl-quarterback-scra
 
 ### Sources
 
-We created a list of sources including (US Mainstream Media)[https://sources.mediameter.org/#media-tag/8875027/details], (US Regional Media)[https://sources.mediameter.org/#media-tag/2453107/details], and the top US sports websites (as identified by Alexa rankings).  These are listed with their MediaCloud ids in `sources.csv`.
+We created a list of sources including [US Mainstream Media](https://sources.mediameter.org/#media-tag/8875027/details), [US Regional Media](https://sources.mediameter.org/#media-tag/2453107/details), and the top US sports websites (as identified by Alexa rankings).  These are listed with their MediaCloud ids in `sources.csv`.
 
 ### English Stopwords
 
